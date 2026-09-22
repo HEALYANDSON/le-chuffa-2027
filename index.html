@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Chuffa · Le Touquet '27</title>
+<meta name="description" content="Chuffa Challenge, 25th Edition. Two nights at Le Manoir Hotel, two rounds at La Mer and Les Dunes, Le Touquet. 25–27 March 2027.">
+<meta property="og:title" content="Le Chuffa — Chuffa Challenge 25th Edition">
+<meta property="og:description" content="Le Touquet · 25–27 March 2027 · Two nights, two rounds · approx £300pp">
+<meta property="og:image" content="images/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f5f0e6; --paper:#fbf8f2; --ink:#16211c; --muted:#5f6a63;
+    --forest:#1f3d2b; --forest-deep:#142a1e; --sand:#c9a96a; --sand-soft:#e8d9b6;
+    --bleu:#1d3a8a; --rouge:#b8322d; --line:#d9d0bd;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:"Playfair Display",Georgia,serif;font-weight:500;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(245,240,230,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+  .brand{font-family:"Playfair Display",serif;font-size:17px;display:flex;align-items:center;gap:10px;white-space:nowrap}
+  .brand .mark{width:26px;height:26px;border-radius:50%;background:var(--forest);color:var(--sand);display:grid;place-items:center;font-size:11px;font-weight:700;font-family:Inter,sans-serif}
+  .brand .logo{height:34px;width:auto}
+  .logo-lg{height:96px;width:auto;margin-bottom:14px}
+  .hero-logo{height:72px;width:auto;margin-bottom:22px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.35))}
+  .brand small{font-family:Inter,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-left:6px}
+  .links{display:flex;gap:22px;font-size:13px;letter-spacing:.04em;overflow-x:auto;scrollbar-width:none}
+  .links::-webkit-scrollbar{display:none}
+  .links a{text-decoration:none;color:var(--muted);white-space:nowrap}
+  .links a:hover{color:var(--ink)}
+
+  /* hero */
+  .hero{position:relative;background:var(--forest-deep);color:var(--cream);overflow:hidden}
+  .hero > img{width:100%;height:min(78vh,640px);object-fit:cover;object-position:center 40%;opacity:.9}
+  .hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,42,30,.15) 0%,rgba(20,42,30,.35) 50%,rgba(20,42,30,.92) 100%)}
+  .hero .copy{position:absolute;left:0;right:0;bottom:0;padding:0 0 48px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);font-weight:600}
+  .eyebrow .flag{display:inline-flex;height:10px;width:16px;border-radius:2px;overflow:hidden}
+  .eyebrow .flag i{flex:1}
+  .hero h1{font-size:clamp(52px,9vw,112px);line-height:.95;margin:14px 0 18px;color:#fff}
+  .hero h1 em{font-style:italic;color:var(--sand)}
+  .hero p{max-width:560px;font-size:clamp(16px,2vw,19px);color:rgba(245,240,230,.88);margin:0}
+
+  /* key facts */
+  .facts{background:var(--paper);border-bottom:1px solid var(--line)}
+  .facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .fact{padding:22px 18px 22px 0;border-right:1px solid var(--line)}
+  .fact:last-child{border-right:0}
+  .fact + .fact{padding-left:18px}
+  .fact b{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
+  .fact span{font-family:"Playfair Display",serif;font-size:22px;line-height:1.2}
+  .fact small{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+
+  /* sections */
+  section{padding:72px 0}
+  section + section{border-top:1px solid var(--line)}
+  .head{display:grid;grid-template-columns:1fr 2fr;gap:32px;margin-bottom:36px}
+  .head .num{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);font-weight:600}
+  .head h2{font-size:clamp(30px,4vw,44px);margin-top:6px}
+  .head p{margin:0;color:var(--muted);font-size:17px;align-self:end}
+  .lede{font-size:18px;max-width:640px}
+
+  /* itinerary */
+  .days{display:grid;gap:28px}
+  .day{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:28px 0;border-top:1px solid var(--line)}
+  .day:last-child{border-bottom:1px solid var(--line)}
+  .day .d b{display:block;font-family:"Playfair Display",serif;font-size:26px;font-weight:500}
+  .day .d span{color:var(--muted);font-size:14px}
+  .stops{display:grid;gap:14px}
+  .stop{display:grid;grid-template-columns:90px 1fr;gap:16px;align-items:baseline}
+  .stop time{font-variant-numeric:tabular-nums;font-size:13px;letter-spacing:.06em;color:var(--forest);font-weight:600}
+  .stop p{margin:0}
+  .stop p b{font-weight:600}
+  .stop p span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+
+  /* travel */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .card{background:var(--paper);border:1px solid var(--line);padding:28px}
+  .card h3{font-size:24px;margin-bottom:8px}
+  .card .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);font-weight:600;display:block;margin-bottom:10px}
+  .card p{margin:0 0 10px;color:var(--ink)}
+  .card p.m{color:var(--muted);font-size:14px}
+  .note{background:var(--sand-soft);border-left:3px solid var(--sand);padding:16px 20px;margin-top:28px;font-size:15px}
+  .note b{font-weight:600}
+
+  /* courses */
+  .course{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;padding:36px 0}
+  .course + .course{border-top:1px solid var(--line)}
+  .course:nth-child(even) .pic{order:2}
+  .pic img{width:100%;aspect-ratio:3/2;object-fit:cover}
+  .course h3{font-size:34px}
+  .course .sub{color:var(--muted);margin:4px 0 16px;font-size:15px}
+  .course p{margin:0 0 14px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+  .stats div b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .stats div span{font-family:"Playfair Display",serif;font-size:22px}
+
+  /* stay */
+  .stay{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}
+  .stay img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .stay h3{font-size:34px}
+  .stay .sub{color:var(--muted);margin:4px 0 16px;font-size:15px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chips span{font-size:13px;padding:6px 12px;border:1px solid var(--line);background:var(--paper);border-radius:999px}
+
+  /* inclusions */
+  .incl{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  .list{list-style:none;padding:0;margin:0;display:grid;gap:0}
+  .list li{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line);align-items:start}
+  .list li:last-child{border-bottom:1px solid var(--line)}
+  .list .tick{width:22px;height:22px;border-radius:50%;background:var(--forest);color:var(--sand);display:grid;place-items:center;font-size:12px;margin-top:2px}
+  .list li b{font-weight:600;display:block}
+  .list li span{color:var(--muted);font-size:14px}
+  .not{background:var(--paper);border:1px solid var(--line);padding:24px 28px;align-self:start}
+  .not h3{font-size:20px;margin-bottom:8px}
+  .not p{margin:0;color:var(--muted);font-size:15px}
+
+  /* cost */
+  .price{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+  .big{background:var(--forest);color:var(--cream);padding:36px}
+  .big .tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);font-weight:600}
+  .big .amt{font-family:"Playfair Display",serif;font-size:clamp(56px,8vw,88px);line-height:1;margin:10px 0 4px}
+  .big .amt sup{font-size:.4em;vertical-align:top;top:.6em;position:relative}
+  .big .per{color:rgba(245,240,230,.75);font-size:15px}
+  .big hr{border:0;border-top:1px solid rgba(245,240,230,.2);margin:22px 0}
+  .big p{margin:0 0 8px;font-size:15px}
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  th,td{text-align:left;padding:14px 0;border-top:1px solid var(--line);vertical-align:top}
+  th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;border-top:0;padding-top:0}
+  td:last-child,th:last-child{text-align:right;font-variant-numeric:tabular-nums}
+  td b{font-weight:600}
+  td small{display:block;color:var(--muted);font-size:13px}
+  tr.total td{border-top:2px solid var(--ink);font-family:"Playfair Display",serif;font-size:20px}
+  .dead{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+  .dead div{border:1px solid var(--line);background:var(--paper);padding:18px 20px}
+  .dead b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .dead span{font-family:"Playfair Display",serif;font-size:26px;display:block;margin-top:4px}
+  .dead small{color:var(--muted);font-size:13px}
+
+  /* spots */
+  .spots{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+  .grid{display:grid;grid-template-columns:repeat(8,1fr);gap:8px}
+  .grid div{aspect-ratio:1;border:1px solid var(--line);background:var(--paper);display:grid;place-items:center;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .grid div.taken{background:var(--forest);color:var(--sand);border-color:var(--forest)}
+  .legend{display:flex;gap:18px;font-size:13px;color:var(--muted);margin-top:14px}
+  .legend i{display:inline-block;width:12px;height:12px;border:1px solid var(--line);background:var(--paper);vertical-align:-1px;margin-right:6px}
+  .legend i.t{background:var(--forest);border-color:var(--forest)}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:20px 0 0}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+  .steps li::before{content:counter(s,decimal-leading-zero);font-family:"Playfair Display",serif;font-size:20px;color:var(--sand)}
+  .steps li:last-child{border-bottom:1px solid var(--line)}
+  .steps b{font-weight:600;display:block}
+  .steps span{color:var(--muted);font-size:14px}
+
+  /* footer */
+  footer{background:var(--forest-deep);color:rgba(245,240,230,.8);padding:56px 0 40px;font-size:14px}
+  footer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:end}
+  footer .brand{color:#fff;font-size:22px}
+  footer .brand .mark{background:var(--sand);color:var(--forest-deep)}
+  footer p{margin:6px 0 0}
+  footer .r{text-align:right;color:rgba(245,240,230,.55);font-size:13px}
+
+  @media (max-width:820px){
+    .facts .wrap{grid-template-columns:1fr 1fr}
+    .fact{border-right:0;border-bottom:1px solid var(--line);padding:18px 0}
+    .fact + .fact{padding-left:0}
+    .fact:nth-child(odd){padding-right:18px;border-right:1px solid var(--line)}
+    .fact:nth-child(even){padding-left:18px}
+    .fact:nth-last-child(-n+2){border-bottom:0}
+    .head,.two,.course,.stay,.incl,.price,.spots,footer .wrap{grid-template-columns:1fr}
+    .course:nth-child(even) .pic{order:0}
+    .day{grid-template-columns:1fr;gap:12px}
+    .stop{grid-template-columns:72px 1fr}
+    .grid{grid-template-columns:repeat(8,1fr);gap:6px}
+    footer .r{text-align:left}
+    section{padding:52px 0}
+    .hero > img{height:70vh}
+    .hero .copy{padding-bottom:36px}
+    .brand small{display:none}
+    .hero-logo{height:56px;margin-bottom:16px}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" style="text-decoration:none">
+      <img src="images/healy-son-logo.png" alt="Healy &amp; Son" class="logo"> <small>Le Touquet '27</small>
+    </a>
+    <div class="links">
+      <a href="#itinerary">Itinerary</a>
+      <a href="#travel">Travel</a>
+      <a href="#courses">Courses</a>
+      <a href="#stay">Stay</a>
+      <a href="#inclusions">Inclusions</a>
+      <a href="#cost">Cost</a>
+      <a href="#spots">Spots</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img src="images/hero.jpg" alt="Dune grasses and a green on La Mer, Le Touquet">
+  <div class="shade"></div>
+  <div class="copy">
+    <div class="wrap">
+      <img src="images/healy-son-logo-light.png" alt="Healy &amp; Son" class="hero-logo">
+      <span class="eyebrow">
+        <span class="flag"><i style="background:#1d3a8a"></i><i style="background:#fff"></i><i style="background:#b8322d"></i></span>
+        Chuffa Challenge · 25th Edition
+      </span>
+      <h1>Le <em>Chuffa</em></h1>
+      <p>Two nights at Le Manoir, two rounds on the Opal Coast — La Mer and Les Dunes — with the Channel between us and Friday morning.</p>
+    </div>
+  </div>
+</header>
+
+<div class="facts">
+  <div class="wrap">
+    <div class="fact"><b>Out</b><span>Thu 25 Mar</span><small>Evening crossing · Fri tee off 10:20</small></div>
+    <div class="fact"><b>Back</b><span>Sat 27 Mar</span><small>After the second round · tee off 10:27</small></div>
+    <div class="fact"><b>Spots</b><span>40 available</span><small>First come, first served</small></div>
+    <div class="fact"><b>Deposit</b><span>£50 by 31 Oct</span><small>Balance by 31 Jan 2027</small></div>
+  </div>
+</div>
+
+<main>
+
+<section id="itinerary">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">01 · Itinerary</div><h2>Three days, two rounds</h2></div>
+      <p>We cross Thursday night so nobody's up at 4am on the Friday. Two full days of golf, one proper dinner, and home in time for Saturday night.</p>
+    </div>
+    <div class="days">
+      <div class="day">
+        <div class="d"><b>Thursday</b><span>25 March · Travel day</span></div>
+        <div class="stops">
+          <div class="stop"><time>PM</time><p><b>Cross to France</b><span>Eurotunnel Folkestone–Calais or DFDS/P&amp;O Dover–Calais. Crossing time to be confirmed once fares are released — expect an evening slot.</span></p></div>
+          <div class="stop"><time>+1h 10</time><p><b>Drive to Le Touquet</b><span>Around 70 km down the A16 from Calais. Straight off the autoroute and into the pines.</span></p></div>
+          <div class="stop"><time>Eve</time><p><b>Check in · Le Manoir Hotel</b><span>Bar's open. Le M Bar, ground floor. Kit in the room, first drink in.</span></p></div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="d"><b>Friday</b><span>26 March · Round one</span></div>
+        <div class="stops">
+          <div class="stop"><time>AM</time><p><b>Breakfast at Le Manoir</b><span>Included. Range balls included too — it's a short walk from the hotel to the practice ground.</span></p></div>
+          <div class="stop"><time>10:20</time><p><b>Round 1 · La Mer</b><span>Colt's 1931 links through the dunes. First group off at 10:20, then every ten minutes or so in fourballs.</span></p></div>
+          <div class="stop"><time>Eve</time><p><b>Group dinner</b><span>Included. One sitting, all 40 of us. Scores read out, no hiding.</span></p></div>
+        </div>
+      </div>
+      <div class="day">
+        <div class="d"><b>Saturday</b><span>27 March · Round two &amp; home</span></div>
+        <div class="stops">
+          <div class="stop"><time>AM</time><p><b>Breakfast &amp; check out</b><span>Bags in the car before the round — it's 25 minutes up to Hardelot.</span></p></div>
+          <div class="stop"><time>10:27</time><p><b>Round 2 · Les Dunes</b><span>First group off at 10:27 at Hardelot. Prizes on the 18th.</span></p></div>
+          <div class="stop"><time>PM</time><p><b>Back to Calais and across</b><span>Return crossing after the round. Home Saturday evening.</span></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="travel">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">02 · Travel</div><h2>Getting there</h2></div>
+      <p>The crossing is included in the price. We'll book it as a group once March 2027 fares are released — either the tunnel or the boat, whichever works out best for the timings.</p>
+    </div>
+    <div class="two">
+      <div class="card">
+        <span class="tag">Option A</span>
+        <h3>Eurotunnel Le Shuttle</h3>
+        <p>Folkestone → Calais in 35 minutes, drive on and stay in the car. The quickest way over and the easiest with clubs in the boot.</p>
+        <p class="m">Le Touquet is around 1 hour 10 from the Calais terminal via the A16.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Option B</span>
+        <h3>Ferry · Dover–Calais</h3>
+        <p>DFDS or P&amp;O, 90 minutes on the water. More sailings to choose from, a bar on board, and usually the cheaper option for a car of four.</p>
+        <p class="m">Same drive the other side — roughly 70 km south to the coast.</p>
+      </div>
+    </div>
+    <div class="note"><b>Cars.</b> We'll organise car shares so every vehicle has four in it — one crossing fare per car keeps the cost down. Say when you pay your deposit if you're happy to drive.</div>
+  </div>
+</section>
+
+<section id="courses">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">03 · Courses</div><h2>Two rounds on the Côte d'Opale</h2></div>
+      <p>Pines, sand and sea air. This is the stretch of coast the British built golf on in the 1920s and '30s, and it still plays like it.</p>
+    </div>
+
+    <div class="course">
+      <div class="pic"><img src="images/la-mer-dunes.jpg" alt="Dune bunkers on La Mer"></div>
+      <div>
+        <div class="num" style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);font-weight:600">Friday 26 March · First tee 10:20</div>
+        <h3>La Mer</h3>
+        <div class="sub">Le Touquet Golf Resort · Harry Colt &amp; C.H. Alison, 1931</div>
+        <p>Billed as the first links in France. An out-and-back routing through proper sand dunes, restored in 2015 to strip out the trees that had crept in over the decades and give it back its open, windswept character. Slick run-offs, deep bunkering around the greens and a view of the Channel from the 18th tee.</p>
+        <p>Ranked 12th in France and inside the top 60 in Continental Europe.</p>
+        <div class="stats">
+          <div><b>Par</b><span>72</span></div>
+          <div><b>Length</b><span>6,430 m</span></div>
+          <div><b>France rank</b><span>#12</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="course">
+      <div class="pic"><img src="images/pines-bunkers.jpg" alt="Pines and bunkers on the Opal Coast"></div>
+      <div>
+        <div class="num" style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);font-weight:600">Saturday 27 March · First tee 10:27</div>
+        <h3>Les Dunes</h3>
+        <div class="sub">Golf d'Hardelot · opened 1990</div>
+        <p>Twenty-five minutes up the coast at Hardelot, tucked into the undulating dunes of Mont Saint-Frieux. Tighter and more tumbling than La Mer, with blind shots and doglegs through the pines — a course that rewards the man who plays it in his head before he plays it off the tee.</p>
+        <p>Ranked 50th in France. Conveniently on the way back north to Calais for the Saturday crossing.</p>
+        <div class="stats">
+          <div><b>Opened</b><span>1990</span></div>
+          <div><b>From hotel</b><span>~25 min</span></div>
+          <div><b>France rank</b><span>#50</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stay">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">04 · Stay</div><h2>Le Manoir Hotel</h2></div>
+      <p>Two nights on the golf course itself. Wake up, walk to the range.</p>
+    </div>
+    <div class="stay">
+      <img src="images/le-manoir.jpg" alt="Le Manoir Hotel at dusk, Le Touquet">
+      <div>
+        <h3>The founder's house</h3>
+        <div class="sub">4-star · Le Touquet Golf Resort · 2170 avenue du Golf</div>
+        <p>Built in 1911 as the private home of Allen Stoneham, the Englishman who founded Golf du Touquet, and turned into a boutique hotel in 2017. Anglo-Norman on the outside — stone, turret, red shutters — and a warm, wood-panelled lounge on the inside. Forty-one rooms, so we'll have most of the place.</p>
+        <p>La Table du Manoir restaurant and Le M Bar are downstairs; Le Touquet town and the seafront are a few minutes' drive.</p>
+        <div class="chips">
+          <span>2 nights</span><span>Breakfast both mornings</span><span>Dinner Friday</span><span>Twin rooms as standard</span><span>Single supplement available</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="inclusions">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">05 · Inclusions</div><h2>What's in the price</h2></div>
+      <p>Pretty much everything bar drinks and lunch.</p>
+    </div>
+    <div class="incl">
+      <ul class="list">
+        <li><span class="tick">✓</span><div><b>Channel crossing</b><span>Eurotunnel or ferry, car and passengers, both ways</span></div></li>
+        <li><span class="tick">✓</span><div><b>2 nights at Le Manoir Hotel</b><span>Thursday and Friday, sharing a twin</span></div></li>
+        <li><span class="tick">✓</span><div><b>2 rounds of golf</b><span>La Mer on Friday, Les Dunes on Saturday</span></div></li>
+        <li><span class="tick">✓</span><div><b>Driving range</b><span>Range balls both mornings</span></div></li>
+        <li><span class="tick">✓</span><div><b>Breakfast × 2</b><span>Both mornings at the hotel</span></div></li>
+        <li><span class="tick">✓</span><div><b>Dinner × 1</b><span>Friday group dinner</span></div></li>
+      </ul>
+      <div class="not">
+        <h3>Not included</h3>
+        <p>Fuel and tolls, lunches, drinks, Thursday and Saturday dinners, buggy or trolley hire, travel insurance, and anything you lose on the course. The single-room supplement is extra if you'd rather not share.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cost">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">06 · Cost</div><h2>About £300 a head</h2></div>
+      <p>Based on two sharing a twin at Le Manoir. The crossing fare isn't published for March 2027 yet, so the final figure may move by a few pounds either way — it won't be dramatic.</p>
+    </div>
+    <div class="price">
+      <div class="big">
+        <span class="tag">Per person · sharing</span>
+        <div class="amt"><sup>£</sup>300</div>
+        <div class="per">approx · twin share · all inclusions above</div>
+        <hr>
+        <p><b>Single room</b> — supplement applies, confirmed once the hotel releases 2027 rates.</p>
+        <p><b>Deposit</b> — £50 secures your spot.</p>
+      </div>
+      <div>
+        <table>
+          <thead><tr><th>Payment</th><th>Due</th><th>Per person</th></tr></thead>
+          <tbody>
+            <tr><td><b>Deposit</b><small>Non-refundable · secures your place</small></td><td>Fri 31 Oct 2026</td><td>£50</td></tr>
+            <tr><td><b>Balance</b><small>Final figure confirmed once crossing fares are out</small></td><td>Sun 31 Jan 2027</td><td>≈ £250</td></tr>
+            <tr class="total"><td>Total</td><td></td><td>≈ £300</td></tr>
+          </tbody>
+        </table>
+        <div class="dead">
+          <div><b>Deposit deadline</b><span>31 October</span><small>End of October 2026</small></div>
+          <div><b>Balance deadline</b><span>31 January</span><small>End of January 2027</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="spots">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">07 · Spots</div><h2>Forty places</h2></div>
+      <p>Ten fourballs. Spots are confirmed in the order deposits land — no deposit, no place held.</p>
+    </div>
+    <div class="spots">
+      <div>
+        <div class="grid" id="spotGrid"></div>
+        <div class="legend"><span><i class="t"></i>Taken</span><span><i></i>Available</span></div>
+      </div>
+      <div>
+        <ol class="steps">
+          <li><div><b>Send your £50 deposit</b><span>Before 31 October. Message James or Seamus for the bank details.</span></div></li>
+          <li><div><b>Say who you're sharing with</b><span>Or if you want a single room — supplement applies.</span></div></li>
+          <li><div><b>Tell us if you'll drive</b><span>We'll fill every car with four to keep the crossing cost down.</span></div></li>
+          <li><div><b>Balance by 31 January</b><span>Final amount confirmed once the crossing is booked.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="squad" style="padding-top:0;border-top:0">
+  <div class="wrap">
+    <img src="images/chuffa-squad.jpg" alt="The Chuffa Challenge squad" style="width:100%;max-height:560px;object-fit:cover;object-position:center 62%">
+    <p style="color:var(--muted);font-size:14px;margin:12px 0 0">The Chuffa Challenge, twenty-four editions in. Number twenty-five goes abroad.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="images/healy-son-logo-light.png" alt="Healy &amp; Son" class="logo-lg">
+      <p>Healy &amp; Son Productions<br>Le Chuffa · Le Touquet, France · 25–27 March 2027</p>
+    </div>
+    <div class="r">
+      Course facts from Le Touquet Golf Resort, Golf d'Hardelot and Top 100 Golf Courses.<br>Prices per person, approximate, correct at September 2026.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Update TAKEN as deposits land — spots fill from 1 upwards.
+  var TAKEN = 0, TOTAL = 40;
+  var g = document.getElementById('spotGrid');
+  for (var i = 1; i <= TOTAL; i++) {
+    var d = document.createElement('div');
+    d.textContent = i; if (i <= TAKEN) d.className = 'taken'; g.appendChild(d);
+  }
+  var left = TOTAL - TAKEN;
+  document.querySelectorAll('.fact')[2].querySelector('span').textContent =
+    TAKEN ? (TAKEN + ' of ' + TOTAL + ' taken') : (TOTAL + ' available');
+</script>
+</body>
+</html>
